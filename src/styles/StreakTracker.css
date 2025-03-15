@@ -1,0 +1,98 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* Ensure full width */
+    grid-gap: 5px;
+    text-align: center;
+    border: 1.5px solid #9b9b9b;
+    background-color: #e6e7eb;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 3px;
+}
+
+.day-box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.day-box.done {
+    background: #87A2FF;
+    /* bluish purple for completed days */
+    color: white;
+    font-weight: bold;
+}
+
+.streak-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    /* Ensure same width as month-nav */
+    margin: 0 auto;
+    gap: 50px;
+    justify-content: center;
+}
+
+.streak-tracker {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns: tasks + heatmap */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 40px; /* Adjust spacing */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%;
+    max-width: 600px; /* Match navbar */
+    margin: 0 auto;
+}
+
+
+.month-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Ensures buttons wrap if screen is small */
+    gap: 10px;
+    width: 600px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.month-nav button {
+    padding: 10px 15px;
+    border: 1px solid #9b9b9b;
+    background-color: #e6e7eb;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+.task-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+.completed-days-title {
+    text-align: center;
+    color: #87A2FF;;
+    font-weight: bold;
+}
+
+.month-nav button:hover {
+    background-color: #ddd;
+}
+
+.month-nav button.active {
+    background-color: #87A2FF;
+    color: white;
+    font-weight: bold;
+}
